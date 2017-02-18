@@ -17,6 +17,11 @@
 	{!! $errors->first('category_lists', '<p class="help-block">:message</p>') !!}
 </div>
 
+<div class="form-group {!! $errors->has('status') ? 'has-error' : '' !!}">
+{!! Form::select('status', ['null'=>'Semua status']+App\Product::statusList(),isset($status) ? $status : null, ['class'=>'form-control']) !!}
+{!! $errors->first('status', '<p class="help-block">:message</p>') !!}
+</div>
+
 <div class="form-group {!! $errors->has('photo') ? 'has-error' : '' !!}">
 	{!! Form::label('photo', 'Foto Produk (jpeg, png)') !!}
 	{!! Form::file('photo') !!}
@@ -36,6 +41,8 @@
 
 <div class="form-group {!! $errors->has('description') ? 'has-error' : '' !!}">
 	{!! Form::label('description', 'Deskripsi') !!}
-	{!! Form::textarea('description', null, ['class'=>'form-control']) !!}
+	{!! Form::textarea('description', null, ['class'=>'form-control','id'=>'ckeditor1']) !!}
 	{!! $errors->first('description', '<p class="help-block">:message</p>') !!}
 </div>
+
+	

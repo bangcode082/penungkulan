@@ -6,6 +6,7 @@
 <script src="{{asset('js/sweetalert.min.js')}}"></script>
 <script src="{{asset('client/js/bootstrap.min.js')}}"></script>
 
+
 <style>
   /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
   .row.content {

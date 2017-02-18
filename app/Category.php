@@ -33,4 +33,18 @@ class Category extends Model
 			}
 		});
 	}
+
+	public function scopeNoParent($query)
+	{
+		return $this->where('parent_id', 0);
+	}
+
+	public function hasParent()
+	{
+		return $this->parent_id > 0;
+	}
+	public function hasChild()
+	{
+		return $this->childs()->count() > 0;
+	}
 }

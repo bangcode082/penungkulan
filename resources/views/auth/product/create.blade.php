@@ -17,3 +17,10 @@
 
 
 @endsection
+
+@section('script')
+$(function () {
+CKEDITOR.replace('ckeditor1');
+});
+@endsection
+

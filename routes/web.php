@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('client.index');
-});
+Route::get('/', 'CatalogsController@index');
+Route::get('/catalogs','CatalogsController@index');
 
 Route::get('/dashboard','DashboardController@index');
 Auth::routes();
@@ -29,14 +28,12 @@ Route::resource('category-product', 'CategoriesController');
 //route untuk produk
 Route::resource('product', 'ProductsController');
 
-Route::get('/banner-product',function(){
-	return view('auth.banner.index');
-});
+Route::resource('contact-product', 'ContactController');
 
-Route::get('/contact-product',function(){
-	return view('auth.contact.index');
-});
+Route::get('/banner-product','ProductsController@banner');
 
-Route::get('/askandanswer-product',function(){
-	return view('auth.AandA.index');
-});
+Route::resource('/askandanswer-product','MessageController');
+
+Route::get('/details/{id}','CatalogsController@detail');
+
+Route::post('message-create','CatalogsController@message');

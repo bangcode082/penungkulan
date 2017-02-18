@@ -37,6 +37,10 @@ closeOnConfirm: true
 function () {
 $form.submit()
 })
-})
+}),
+
+$(function () {
+        CKEDITOR.replace('ckeditor1');
+    });
 })
 @endsection

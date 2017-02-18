@@ -22,7 +22,7 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $q = $request->get('q');
-        $products = Product::where('name', 'LIKE', '%'.$q.'%')->orderBy('name')->paginate(10);
+        $products = Product::where('name', 'LIKE', '%'.$q.'%')->orderBy('id','desc')->paginate(5);
         // $products = Product::paginate(10);
 
         return view('auth.product.index', compact('products'));
@@ -51,13 +51,15 @@ class ProductsController extends Controller
             'category_lists' => 'required',
             'photo' => 'max:10240',
             'description' => 'required',
-            'price' => 'required|numeric|min:1000'
+            'price' => 'required|numeric|min:1000',
+            'status'=>'required'
             ]);
         $data = $request->only('name', 'photo', 'description','price');
         if ($request->hasFile('photo')) {
             $data['photo'] = $this->savePhoto($request->file('photo'));
         }
         $data['category_id']=$request->category_lists;
+        $data['status']=$request->status;
         $product = Product::create($data);
         
         alert()->success('Berhasil Menambah Produk', 'Kerja Bagus!');
@@ -102,7 +104,8 @@ class ProductsController extends Controller
             'category_lists'=>'required',
             'description' => 'required',
             'photo' => 'max:10240',
-            'price' => 'required|numeric|min:1000'
+            'price' => 'required|numeric|min:1000',
+            'status'=>'required'
             ]);
         $data = $request->only('name', 'description', 'price');
         if ($request->hasFile('photo')) {
@@ -110,6 +113,7 @@ class ProductsController extends Controller
             if ($product->photo !== '') $this->deletePhoto($product->photo);
         }
         $data['category_id']=$request->category_lists;
+        $data['status']=$request->status;
         $product->update($data);
 
         alert()->success('Produk berhasil di edit', 'Kerja Bagus!');
@@ -144,6 +148,15 @@ class ProductsController extends Controller
     {
         $path = public_path() . DIRECTORY_SEPARATOR . 'img'. DIRECTORY_SEPARATOR . $filename;
         return File::delete($path);
+    }
+
+    public function banner(Request $request)
+    {
+        $q = $request->get('q');
+        $products = Product::where([['name', 'LIKE', '%'.$q.'%'],['status','banner']])->orderBy('name')->paginate(10);
+        // $products = Product::paginate(10);
+
+        return view('auth.banner.index', compact('products'));
     }
 
 }

@@ -25,7 +25,7 @@
 
   @include('auth.partial._footer')
 
-
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
   <script type="text/javascript">
     @yield('script')
   </script>

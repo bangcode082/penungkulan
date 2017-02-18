@@ -1,6 +1,6 @@
 <div class="col-sm-3 sidenav">
 
-  <h4>Dashboard</h4>
+  <h4>Dashboard<span> <a href="{{ url('/') }}" class="btn btn-sm btn-warning">Kembali Ke web</a></span></h4>
   <ul class="nav nav-pills nav-stacked">
     <li class="@yield('menu1')"><a href="{{ route('product.index') }}">Produk</a></li>
     <li class="@yield('menu2')"><a href="{{ route('category-product.index') }}">Kategori</a></li>

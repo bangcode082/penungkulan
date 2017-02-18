@@ -17,6 +17,7 @@
 			<th>Nama Produk</th>
 			<th>Kategori</th>			
 			<th>Deskripsi</th>
+			<th>Status</th>
 			<th>Harga</th>
 			<th></th>
 		</tr>
@@ -32,7 +33,8 @@
 					{{ $product->categories->title }}
 				</span>				
 			</td>
-			<td width="35%">{{ substr($product->description,0,80) }} ...</td>
+			<td width="35%">{!! substr($product->description,0,80) !!} ...</td>
+			<td>{{ $product->human_status }}</td>
 			<td width="15%">Rp . {{ $product->price }}</td>
 			<td width="15%">
 				{!! Form::model($product, ['route' => ['product.destroy', $product], 'method' => 'delete', 'class' => 'form-inline'] ) !!}
@@ -46,7 +48,9 @@
 	</tbody>
 </table>
 
-{{ $products->links() }}
+<div>
+{!! $products->appends(compact('q'))->links() !!}
+</div>
 
 @endsection
 
