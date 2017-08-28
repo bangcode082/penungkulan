@@ -11,7 +11,25 @@
 |
 */
 
-Route::get('/', 'CatalogsController@index');
+
+Route::get('/',function(){
+	return view('cppenungkulan.index');
+});
+
+Route::get('/about',function(){
+	return view('cppenungkulan.tentang');
+});
+
+Route::get('/bidang',function(){
+	return view('cppenungkulan.bidang');
+});
+
+Route::get('/infrastruktur',function(){
+	return view('cppenungkulan.infrastruktur');
+});
+
+Route::get('/store', 'CatalogsController@index');
+
 Route::get('/catalogs','CatalogsController@index');
 
 Route::get('/dashboard','DashboardController@index');
