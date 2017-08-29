@@ -1,5 +1,6 @@
 <!-- Bootstrap core JavaScript -->
-<script src="{{asset('assetcp/vendor/jquery/jquery-1.8.3.min.js')}}"></script>
+<script src="{{asset('assetcp/vendor/jquery/jquery.min.js')}}"></script>
+<!-- <script src="{{asset('assetcp/vendor/jquery/jquery-1.8.3.min.js')}}"></script> -->
 <script src="{{asset('assetcp/vendor/jquery/jquery.elevateZoom.js')}}"></script>
 <script src="{{asset('assetcp/vendor/popper/popper.min.js')}}"></script>
 <script src="{{asset('assetcp/vendor/bootstrap/js/bootstrap.min.js')}}"></script>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Katalog Keburusan</title>
+	<title>Katalog Penungkulan</title>
 	
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>

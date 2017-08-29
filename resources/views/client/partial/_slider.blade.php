@@ -6,7 +6,7 @@
 					<div class="carousel-inner">
 						<div class="item active">
 							<div class="col-sm-6">
-								<h1><span>Keburusan</span>-Store</h1>
+								<h1><span>Penungkulan</span>-Store</h1>
 								<h2>{{ $banner1->name }}</h2>
 								
 								<a href="{{ url('/details',$banner1->id) }}" class="btn btn-default get">Lihat Detail</a>
@@ -20,7 +20,7 @@
 						@foreach($banner as $slider)
 						<div class="item">
 							<div class="col-sm-6">
-								<h1><span>Keburusan</span>-Store</h1>
+								<h1><span>Penungkulan</span>-Store</h1>
 								<h2>{{$slider->name}}</h2>
 								
 								<a href="{{ url('/details',$slider->id) }}" class="btn btn-default get">Lihat Detail</a>

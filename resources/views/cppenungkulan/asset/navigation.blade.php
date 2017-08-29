@@ -20,6 +20,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url('store') }}">Produk</a>
         </li>
+        @if(Auth::user())
+         <li style="padding-top: 5px;">
+          <a class="btn btn-primary btn-sm " href="{{ url('dashboard') }}" >Dashboard</a>
+        </li>
+        @endif
       </ul>
     </div>
   </div>

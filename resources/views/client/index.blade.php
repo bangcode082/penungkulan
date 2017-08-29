@@ -18,7 +18,7 @@
 				@if($ctgry != null)
 					<h2 class="title text-center">Produk Untuk {{$ctgry->title}}</h2>
 				@else
-					<h2 class="title text-center">Produk Keburusan</h2>
+					<h2 class="title text-center">Produk Penungkulan</h2>
 				@endif			
 				</div><!--features_items-->
 
