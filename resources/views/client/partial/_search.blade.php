@@ -10,9 +10,9 @@
 	</div>
 	{!! Form::hidden('cat', $cat) !!}
 	{!! Form::submit('Cari', ['class'=>'btn btn-warning']) !!}
-		@if(Auth::user())
-		<a href="{{ url('dashboard') }}" class="form-group btn btn-danger">Dashboard</a>
-		@endif
+	@if(Auth::user())
+	<a href="{{ url('dashboard') }}" class="form-group btn btn-danger">Dashboard</a>
+	@endif
 	
 	{!! Form::close() !!}
 

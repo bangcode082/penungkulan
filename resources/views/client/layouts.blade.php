@@ -23,13 +23,16 @@
 					<div class="col-sm-4">
 						<div class="logo pull-left">
 							<a href="{{ url('/') }}"><img src="{{url('client/images/home/logo.png')}}" alt="" /></a>
+							
 						</div>
+
 						<!-- <div class="btn-group pull-right">							
-					
+
 					</div> -->
 				</div>
 				<div class="col-sm-8">
 					<!-- <div class="shop-menu pull-right"> -->
+					
 					@yield('search')
 					
 
@@ -50,9 +53,9 @@
 
 @include('client.partial._js')
 
- <script type="text/javascript">
-    @yield('script')
-  </script>
+<script type="text/javascript">
+	@yield('script')
+</script>
 
 @include('sweet::alert')
 </body>

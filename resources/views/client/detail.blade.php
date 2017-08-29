@@ -1,4 +1,17 @@
 @extends('client.layouts')
+
+@section('search')
+<div class="pull-right">
+	<a href="{{ url('store') }}" class="form-group btn btn-warning">
+		<span class="glyphicon glyphicon-home"></span>
+		Store
+	</a>
+</div>
+
+
+
+@endsection
+
 @section('content')
 
 <section>
@@ -55,19 +68,19 @@
 								<p><b>Tinggalkan Pesan</b></p>
 
 								{!! Form::open(['url' => 'message-create','method'=>'POST'])!!}
-									<span>
-										{!! Form::text('sender',null,['placeholder'=>'Nama...']) !!}
+								<span>
+									{!! Form::text('sender',null,['placeholder'=>'Nama...']) !!}
 
-										{!! Form::email('email',null,['placeholder'=>'Email...']) !!}
+									{!! Form::email('email',null,['placeholder'=>'Email...']) !!}
 
 
 
-									</span>
+								</span>
 
-									{!! Form::textarea('message',null,['placeholder'=>'Tuliskan Pesan anda... cantumkan no hp bila perlu']) !!}
-									{!! Form::submit('Kirim Pesan', ['class'=>'btn btn-primary pull-right']) !!}
+								{!! Form::textarea('message',null,['placeholder'=>'Tuliskan Pesan anda... cantumkan no hp bila perlu']) !!}
+								{!! Form::submit('Kirim Pesan', ['class'=>'btn btn-primary pull-right']) !!}
 								{!! Form::close() !!}
-					
+
 							</div>
 						</div>
 
